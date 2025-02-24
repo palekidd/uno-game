@@ -1,67 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Scrolling Nav - Start Bootstrap Template</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-            <div class="container px-4">
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Header-->
-        <header class="bg-primary bg-gradient text-white">
-            <div class="container px-4 text-center">
-                <h1 class="fw-bolder">Welcome to Scrolling Nav</h1>
-                <p class="lead">A functional Bootstrap 5 boilerplate for one page scrolling websites</p>
-                <a class="btn btn-lg btn-light" href="#about">Start scrolling!</a>
-            </div>
-        </header>
-        <!-- About section-->
-        <section id="about">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2>About this page</h2>
-                        <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
-                        <ul>
-                            <li>Clickable nav links that smooth scroll to page sections</li>
-                            <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-                            <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-                            <li>Minimal custom CSS so you are free to explore your own unique design options</li>
-                        </ul>
+
+<!-- HEADER -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Scrolling Nav - Start Bootstrap Template</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Bracket connection scripts -->
+    <script type="text/javascript" src="node_modules/jquery-bracket/dist/jquery.bracket.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/jquery-bracket/dist/jquery.bracket.min.css" />
+</head>
+
+
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container px-4">
+        <a class="navbar-brand" href="#page-top">
+            <img src="../src/assets/casino.png" alt="Casino" style="width: 40px; height: auto;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#signup">SignUp</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Brackets</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Results/Pics</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<!-- header -->
+<header class="bg-primary bg-gradient text-white">
+    <div class="container px-4 text-center">
+        <h1 class="fw-bolder">Welcome to the Uno Teachers Cup</h1>
+        <p class="lead">Sign up below and see your opponent</p>
+        <div class="d-flex flex-column align-items-center">
+            <img src="../src/assets/uno.png" class="img-fluid rounded d-block mx-auto mb-3" alt="UNO Logo">
+            <a class="btn btn-light btn-lg mt-2" href="#about">I'm in!</a>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- Sign-Up Section -->
+<section id="signup">
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-lg-8">
+                <h2>Sign Up for the Uno Teachers Cup</h2>
+                <p class="lead">Enter your details below to join the competition.</p>
+                
+                <form action="submit.php" method="post">
+                    <div class="mb-3">
+                        <label for="teacherName" class="form-label">Teacher Name</label>
+                        <input type="text" class="form-control" id="teacherName" name="teacherName" required>
                     </div>
-                </div>
-            </div>
-        </section>
-        <!-- Services section-->
-        <section class="bg-light" id="services">
-            <div class="container px-4">
-                <div class="row gx-4 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2>Services we offer</h2>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
+                    <div class="mb-3">
+                        <label for="teacherEmail" class="form-label">Teacher Email</label>
+                        <input type="email" class="form-control" id="teacherEmail" name="teacherEmail" required>
                     </div>
-                </div>
+                    <button type="submit" class="btn btn-danger">Sign Up</button>
+                </form>
             </div>
-        </section>
-        <!-- Contact section-->
+        </div>
+    </div>
+</section>
+
+
+<!-- Bracket section-->
+<section class="bg-light" id="services">
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-lg-8">
+                <h2>Knockout Brackets</h2>
+                <p class="lead">Brackets here</p>
+
+                <!-- Bracket Container -->
+                <div id="bracket" style="height: 400px;"></div> <!-- Ensure a height for the bracket -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Default Bracket Initialization -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        var data = [
+            { "name": "Team 1" },
+            { "name": "Team 2" },
+            { "name": "Team 3" },
+            { "name": "Team 4" }
+        ];
+
+        $('#bracket').bracket({
+            teams: data,
+            onMatchClick: function() { alert('Match clicked!'); }
+        });
+    });
+</script>
+<!-- Contact section-->
         <section id="contact">
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">

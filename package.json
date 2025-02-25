@@ -36,7 +36,9 @@
         "url": "https://github.com/StartBootstrap/startbootstrap-scrolling-nav.git"
     },
     "dependencies": {
-        "bootstrap": "5.2.3"
+        "bootstrap": "5.2.3",
+        "jquery": "^3.7.1",
+        "jquery-bracket": "^0.11.1"
     },
     "devDependencies": {
         "autoprefixer": "10.4.14",

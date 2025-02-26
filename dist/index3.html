@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEADER -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Scrolling Nav - Start Bootstrap Template</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    
+
+<!-- gracket -->
+<style type="text/css">
+    .g_gracket { width: 850px; background-color: #fff; padding: 35px 10px 5px; line-height: 100%; position: relative; overflow: hidden;}
+    .g_round { float: left; margin-right: 50px; }
+    .g_game { position: relative; margin-bottom: 15px; }
+    .g_gracket h3 { margin: 0; padding: 10px 8px 8px; font-size: 10px; font-weight: normal; color: #fff}
+    .g_team { background: #3597AE; }
+    .g_team:last-child {  background: #FCB821; }
+    .g_round:last-child { margin-right: 20px; }
+    .g_winner { background: #444; }
+    .g_winner .g_team { background: none; }
+    .g_current { cursor: pointer; background: #A0B43C!important; }
+    .g_round_label { top: -5px; font-weight: normal; color: #CCC; text-align: center; font-size: 18px; }
+</style>
+
+    <!-- dependencies -->
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../gracket/jquery.gracket.min.js"></script>
+
+    <!-- main lib -->
+    <script type="text/javascript" src="../gracket/jquery.gracket.js"></script>
+	 <script type="text/javascript" src="../gracket/tests/test.js"></script>
+	
+</head>
+
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container px-4">
+        <a class="navbar-brand" href="#page-top">
+            <img src="../src/assets/casino.png" alt="Casino" style="width: 40px; height: auto;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#signup">SignUp</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Brackets</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Results/Pics</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- header -->
+<header class="bg-primary bg-gradient text-white">
+    <div class="container px-4 text-center">
+        <h1 class="fw-bolder">Welcome to the Uno Teachers Cup</h1>
+        <p class="lead">Sign up below and see your opponent</p>
+        <div class="d-flex flex-column align-items-center">
+            <img src="../src/assets/uno.png" class="img-fluid rounded d-block mx-auto mb-3" alt="UNO Logo">
+            <a class="btn btn-light btn-lg mt-2" href="#about">I'm in!</a>
+        </div>
+    </div>
+</header>
+
+<!-- Sign-Up Section -->
+<section id="signup">
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-lg-8">
+                <h2>Sign Up for the Uno Teachers Cup</h2>
+                <p class="lead">Enter your details below to join the competition.</p>
+                
+                <form action="submit.php" method="post">
+                    <div class="mb-3">
+                        <label for="teacherName" class="form-label">Teacher Name</label>
+                        <input type="text" class="form-control" id="teacherName" name="teacherName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="teacherEmail" class="form-label">Teacher Email</label>
+                        <input type="email" class="form-control" id="teacherEmail" name="teacherEmail" required>
+                    </div>
+                    <button type="submit" class="btn btn-danger">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bracket section-->
+<section class="bg-light" id="services">
+    <div class="container px-4">
+        <div class="row gx-4">
+            <div class="col-lg-8">
+                <h2 class="text-start">Knockout Brackets</h2>
+                <p class="lead text-start">Round 1</p>
+                <div class="my_gracket"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Tournament Progress Section -->
+<section id="tournament-progress">
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-lg-8">
+                <h2>Tournament Progress</h2>
+                <p class="lead">View the progress of each group and the winners of each round.</p>
+
+                <!-- Group Stage -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Group Stage</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Group A -->
+                        <div class="group">
+                            <h5>Group A</h5>
+                            <ul>
+                                <li>Player 1</li>
+                                <li>Player 2</li>
+                                <li>Player 3</li>
+                                <li>Player 4</li>
+                            </ul>
+                            <p><strong>Winners:</strong> Player 1, Player 2</p>
+                        </div>
+
+                        <!-- Group B -->
+                        <div class="group">
+                            <h5>Group B</h5>
+                            <ul>
+                                <li>Player 5</li>
+                                <li>Player 6</li>
+                                <li>Player 7</li>
+                                <li>Player 8</li>
+                            </ul>
+                            <p><strong>Winners:</strong> Player 5, Player 6</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Round 2 -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Round 2</h4>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Match 1:</strong> Player 1 vs Player 5</p>
+                        <p><strong>Match 2:</strong> Player 2 vs Player 6</p>
+                    </div>
+                </div>
+
+                <!-- Round 3 (and beyond) can be added similarly -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Footer-->
+<footer class="py-5 bg-dark">
+    <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+</footer>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+
+<!-- Gracket Tournament Bracket Data -->
+<script type="text/javascript">
+    (function(win, doc, $){
+        // Test Data
+win.TestData = [
+    // Round 1 - Groups of 4, 1 winner each
+    [
+        [{"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, 
+         {"name" : "Andrew Miller", "id" : "andrew-miller", "seed" : 2}, 
+         {"name" : "James Coutry", "id" : "james-coutry", "seed" : 3}, 
+         {"name" : "Sam Merrill", "id" : "sam-merrill", "seed" : 4}],
+
+        [{"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5}, 
+         {"name" : "Everett Zettersten", "id" : "everett-zettersten", "seed" : 6}, 
+         {"name" : "John Scott", "id" : "john-scott", "seed" : 7}, 
+         {"name" : "Teddy Koufus", "id" : "teddy-koufus", "seed" : 8}],
+
+        [{"name" : "Arnold Palmer", "id" : "arnold-palmer", "seed" : 9}, 
+         {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10}, 
+         {"name" : "Jesse James", "id" : "jesse-james", "seed" : 11}, 
+         {"name" : "Scott Anderson", "id" : "scott-anderson", "seed" : 12}],
+
+        [{"name" : "Josh Groben", "id" : "josh-groben", "seed" : 13}, 
+         {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14}, 
+         {"name" : "Jake Coutry", "id" : "jake-coutry", "seed" : 15}, 
+         {"name" : "Spencer Zettersten", "id" : "spencer-zettersten", "seed" : 16}]
+    ],
+    // Round 2 - 1 winner from each group advances (4 players total)
+    [
+        [{"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, 
+         {"name" : "Teddy Koufus", "id" : "teddy-koufus", "seed" : 8}],
+
+        [{"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10}, 
+         {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14}]
+    ],
+    // Round 3 - Semi-Final (Winner from Round 2)
+    [
+        [{"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, 
+         {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14}]
+    ],
+    // Champion
+    [
+        [{"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}]
+    ]
+];
+
+        // Initialize gracket with test data
+        $(".my_gracket").gracket({ src : win.TestData });
+    })(window, document, jQuery);
+</script>
+</body>
+</html>

@@ -14,12 +14,7 @@
     <link href="css/styles.css" rel="stylesheet" />
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    <!-- Bracket connection scripts -->
-    <script type="text/javascript" src="node_modules/jquery-bracket/dist/jquery.bracket.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="node_modules/jquery-bracket/dist/jquery.bracket.min.css" />
 
-    <script src="http://10.128.212.200:8080/target/target-script-min.js#anonymous"></script>
 </head>
 
 <!-- Navigation-->
@@ -85,29 +80,11 @@
                 <h2>Knockout Brackets</h2>
                 <p class="lead">Brackets here</p>
 
-                <!-- Bracket Container -->
-                <div id="bracket" style="height: 400px;"></div> <!-- Ensure a height for the bracket -->
             </div>
         </div>
     </div>
 </section>
 
-<!-- Default Bracket Initialization -->
-<script type="text/javascript">
-    $(document).ready(function() {
-        var data = [
-            { "name": "Team 1" },
-            { "name": "Team 2" },
-            { "name": "Team 3" },
-            { "name": "Team 4" }
-        ];
-
-        $('#bracket').bracket({
-            teams: data,
-            onMatchClick: function() { alert('Match clicked!'); }
-        });
-    });
-</script>
 
 <!-- Contact section-->
 <section id="contact">

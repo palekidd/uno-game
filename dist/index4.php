@@ -71,44 +71,29 @@
     </div>
 </section>
 
-<!-- Contact section-->
+<!-- Contact section -->
 <section class="bg-light" id="contact">
     <div class="container px-4">
         <div class="row gx-4 justify-content-center">
             <div class="col-lg-8">
                 <h2>If people sign up</h2>
                 <p class="lead">Print players here</p>
-
 <?php
-// Try to open the database
-$db = new SQLite3('/var/www/html/uno-site/database/tournament.db');
+$pdo = new PDO('sqlite:/var/www/html/uno-site/tournament.db');
+$query = $pdo->query("SELECT name, email FROM signups");
 
-if (!$db) {
-    echo "Failed to open the database.";
-} else {
-    echo "Database opened successfully.";
+echo "<h3>Players:</h3><ul>";
+while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+    echo "<li>" . htmlspecialchars($row['name']) . " (" . htmlspecialchars($row['email']) . ")</li>";
 }
-
-// Run the query
-$query = "SELECT name, email FROM signups";
-$result = $db->query($query);
-
-if ($result) {
-    echo '<ul>';
-    while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
-        echo '<li>' . $row['name'] . ' - ' . $row['email'] . '</li>';
-    }
-    echo '</ul>';
-} else {
-    echo 'Error with the query: ' . $db->lastErrorMsg();
-}
-
-$db->close();
+echo "</ul>";
 ?>
             </div>
         </div>
     </div>
 </section>
+
+
 <!-- Tournament Progress Section -->
 <section id="tournament-progress">
     <div class="container px-4">

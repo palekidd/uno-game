@@ -80,13 +80,35 @@
                 <p class="lead">Print players here</p>
 
 <?php
-echo "Hello, World!";
+// Try to open the database
+$db = new SQLite3('/var/www/html/uno-site/database/tournament.db');
+
+if (!$db) {
+    echo "Failed to open the database.";
+} else {
+    echo "Database opened successfully.";
+}
+
+// Run the query
+$query = "SELECT name, email FROM signups";
+$result = $db->query($query);
+
+if ($result) {
+    echo '<ul>';
+    while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+        echo '<li>' . $row['name'] . ' - ' . $row['email'] . '</li>';
+    }
+    echo '</ul>';
+} else {
+    echo 'Error with the query: ' . $db->lastErrorMsg();
+}
+
+$db->close();
 ?>
             </div>
         </div>
     </div>
 </section>
-
 <!-- Tournament Progress Section -->
 <section id="tournament-progress">
     <div class="container px-4">
@@ -190,4 +212,26 @@ echo "Hello, World!";
 </section>
 
 <!-- Contact section-->
-<section class="bg-li
+<section class="bg-light" id="contact">
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-lg-8">
+                <h2>Contact us</h2>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer-->
+<footer class="py-5 bg-dark">
+    <div class="container px-4"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+</footer>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+</body>
+</html>
